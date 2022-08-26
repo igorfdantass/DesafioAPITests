@@ -1,0 +1,29 @@
+| nome              | cpf            | email                     | valor | parcelas | seguro | statusCode | Mensagem            |
+| "João"            | 34815466025    | João@email.com            | 1000  | 6        | true   | 201        |                     |
+| "José"            | 63453296060    | José@email.com            | 1100  | 12       | true   | 201        |                     |
+| "Maria"           | 17635877038    | Maria@email.com           | 1200  | 18       | false  | 201        |                     |
+| "Zefa"            | 05854183064    | Zefa@email.com            | 1300  | 10       | true   | 201        |                     |
+| "Gertrudes"       | 45975985021    | Gertrudes@email.com       | 1400  | 15       | false  | 201        |                     |
+| "InfoFaltante"    | 84404726090    | InfoFaltante@email.com    | 1200  | 10       | true   | 400        | Erro                |
+| "CpfDuplicado"    | 42714255086    | CpfDuplicado@email.com    | 1500  | 2        | false  | 409        | CPF já existente    |
+| "FormatoInvalido" | 56810993002    | FormatoInvalido@email.com | 9900  | 10       | true   | 400        | Erro                |
+| "ValorInferior"   | 37045020066    | ValorInferior@email.com   | 1700  | 10       | true   | 400        | Erro                |
+| "ValorSuperior"   | 70231914024    | ValorSuperior@email.com   | 1700  | 10       | true   | 400        | Erro                |
+
+
+
+#Edição
+#    Exemplos:
+#      | alteracao    | nome              | cpf            | email                     | valor | parcelas | seguro | statusCode | Mensagem           |
+#      | nome/email   | "João1"           | 34815466025    | João1@email.com           | 1000  | 6        | true   | 200        |                    |
+#      | cpf          | "José"            | 09533524049    | José@email.com            | 1100  | 12       | true   | 200        |                    |
+#      | valor        | "Maria"           | 17635877038    | Maria@email.com           | 5000  | 18       | false  | 200        |                    |
+#      | parcelas     | "Zefa"            | 05854183064    | Zefa@email.com            | 1300  | 2        | true   | 200        |                    |
+#      | seguro       | "Gertrudes"       | 45975985021    | Gertrudes@email.com       | 1400  | 15       | true   | 200        |                    |
+#      | restrito     | "Restrito"        | 26276298085    | Restrito@email.com        | 1400  | 15       | true   | 200        |                    |
+#      |              | "SemSimulacao"    | 08835568048    | SemSimulacao@email.com    | 1200  | 10       | true   | 404        | CPF não encontrado |
+#      | Semcpf       | "InfoFaltante"    |                | InfoFaltante@email.com    | 1200  | 10       | true   | 400        | Erro               |
+#      | AVERIFICAR   | "CpfDuplicado"    | 02676129074    | CpfDuplicado@email.com    | 1500  | 2        | false  | 409        | CPF já existente   |
+#      | Cpf com masc | "FormatoInvalido" | 568.109.930-02 | FormatoInvalido@email.com | 9900  | 10       | true   | 400        | Erro               |
+#      |              | "ValorInferior"   | 60939658054    | ValorInferior@email.com   | 999   | 10       | true   | 400        | Erro               |
+#      |              | "ValorSuperior"   | 60939658054    | ValorSuperior@email.com   | 40001 | 10       | true   | 400        | Erro               |

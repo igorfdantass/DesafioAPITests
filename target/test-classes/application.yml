@@ -1,0 +1,3 @@
+root: http://localhost:8889/
+    restriction: ${root.simulation}/api/v1/restricoes/
+    simulation: ${root.simulation}/api/v1/simulacoes/
