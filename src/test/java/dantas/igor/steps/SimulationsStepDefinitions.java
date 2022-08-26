@@ -1,21 +1,27 @@
 package dantas.igor.steps;
 
 import dantas.igor.models.SimulationModel;
+import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.pt.*;
-import io.cucumber.spring.CucumberContextConfiguration;
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.response.ValidatableResponse;
 import org.apache.http.HttpStatus;
-import org.codehaus.groovy.runtime.typehandling.NumberMathModificationInfo;
+
+import java.util.ArrayList;
 
 import static io.restassured.RestAssured.given;
+import static io.restassured.RestAssured.when;
 import static org.hamcrest.Matchers.*;
 
-@CucumberContextConfiguration
 public class SimulationsStepDefinitions {
+
+    private static final String SIMULATIONS_ENDPOINT = "/api/v1/simulacoes/";
+    ValidatableResponse response;
+    private String id;
+    SimulationModel model = new SimulationModel();
 
     @Before
     public void setup(){
@@ -27,12 +33,15 @@ public class SimulationsStepDefinitions {
                 .build();
     }
 
-    private static final String SIMULATIONS_ENDPOINT = "/api/v1/simulacoes/";
-    ValidatableResponse response;
-
-    private String id;
-
-    SimulationModel model = new SimulationModel();
+    @After
+    public void deteleAllSimulations(){
+        consultarTodasAsSimulaçõesRealizadas();
+        ArrayList <Integer> listAllIds = when().get(SIMULATIONS_ENDPOINT)
+                .then().extract().path("id");
+        for(Integer id : listAllIds){
+            when().delete(SIMULATIONS_ENDPOINT + id).then().statusCode(HttpStatus.SC_OK);
+        }
+    }
 
     @Dado("que existem simulações")
     public void que_existem_simulações() {
@@ -75,10 +84,12 @@ public class SimulationsStepDefinitions {
 
     @Quando("cadastro simulação")
     public void cadastroSimulação() {
+        System.out.println(model);
         response =
                 given()
                         .relaxedHTTPSValidation()
                         .body(model)
+                        .log().all()
                         .when()
                         .post(SIMULATIONS_ENDPOINT)
                         .then()
@@ -90,7 +101,7 @@ public class SimulationsStepDefinitions {
         model.setNome(nome);
     }
 
-    @E("Cpf: {string}")
+    @E("Cpf: {word}")
     public void cpf(String cpf) {
         model.setCpf(cpf);
     }
@@ -121,7 +132,7 @@ public class SimulationsStepDefinitions {
 
     @E("retorna id da simulação")
     public void retornaIdDaSimulação() {
-        response.body("$.id", is(not(null)));
+        response.body("id", is(not(null)));
     }
 
     @E("retorna {string} de erro")

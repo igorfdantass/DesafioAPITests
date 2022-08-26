@@ -24,10 +24,10 @@ Funcionalidade: Validar gerenciamento de simulações de crédito
     E retorna id da simulação
 
     Exemplos:
-      | nome           | cpf         | email                  | valor | parcelas | seguro | status |
-      | "SimulacaoOK1" | 02676129074 | SimulacaoOK1@email.com | 1000  | 2        | true   | 201    |
-      | "SimulacaoOK2" | 17444393036 | SimulacaoOK2@email.com | 5000  | 36       | true   | 201    |
-      | "SimulacaoOK3" | 00812656032 | SimulacaoOK3@email.com | 40000 | 48       | true   | 201    |
+      | nome         | cpf         | email                  | valor | parcelas | seguro | status |
+      | SimulacaoOK1 | 02676129074 | SimulacaoOK1@email.com | 1000  | 2        | true   | 201    |
+      | SimulacaoOK2 | 17444393036 | SimulacaoOK2@email.com | 5000  | 36       | true   | 201    |
+      | SimulacaoOK3 | 00812656032 | SimulacaoOK3@email.com | 40000 | 48       | true   | 201    |
 
   Esquema do Cenario: Inserir simulação inválida
     Dado que tenho os dados:
@@ -42,14 +42,14 @@ Funcionalidade: Validar gerenciamento de simulações de crédito
     E retorna <mensagem> de erro
 
     Exemplos:
-      | nome               | cpf            | email                     | valor | parcelas | seguro | status | mensagem                                |
-      | "InfoFaltante"     |                | InfoFaltante@email.com    | 1200  | 10       | true   | 400    | 'Cpf nao pode ser vazio'                |
-      | "CpfDuplicado"     | 02676129074    | CpfDuplicado@email.com    | 1500  | 2        | false  | 409    | CPF duplicado                           |
-      | "FormatoInvalido"  | 982.916.950-24 | FormatoInvalido@email.com | 9900  | 10       | true   | 400    | 'Formato invalido'                      |
-      | "ValorInferior"    | 17635877038    | ValorInferior@email.com   | 999   | 10       | true   | 400    | Erro                                    |
-      | "ValorSuperior"    | 60939658054    | ValorSuperior@email.com   | 40001 | 10       | true   | 400    | Erro                                    |
-      | "Parcela Inferior" | 56810993002    | ValorSuperior@email.com   | 1200  | 1        | true   | 400    | Parcelas deve ser igual ou maior que 2  |
-      | "Parcela Inferior" | 37045020066    | ValorSuperior@email.com   | 1200  | 49       | true   | 400    | Parcelas deve ser igual ou menor que 48 |
+      | nome             | cpf            | email                     | valor | parcelas | seguro | status | mensagem                                |
+      | CpfDuplicado     | 02676129074    | CpfDuplicado@email.com    | 1500  | 2        | false  | 409    | CPF duplicado                           |
+      | ValorInferior    | 17635877038    | ValorInferior@email.com   | 999   | 10       | true   | 400    | Erro qqr                                |
+      | ValorSuperior    | 60939658054    | ValorSuperior@email.com   | 40001 | 10       | true   | 400    | Erro qqr                                |
+      | Parcela Inferior | 56810993002    | ValorSuperior@email.com   | 1200  | 1        | true   | 400    | Parcelas deve ser igual ou maior que 2  |
+      | Parcela Inferior | 37045020066    | ValorSuperior@email.com   | 1200  | 49       | true   | 400    | Parcelas deve ser igual ou menor que 48 |
+      | FormatoInvalido  | 982.916.950-24 | FormatoInvalido@email.com | 9900  | 10       | true   | 400    | Formato invalido                        |
+      | InfoFaltante     | 98291695024    | InfoFaltante@email.com    | 1200  | 10       | true   | 400    | Cpf nao pode ser vazio                  |
 
   Cenario: Consultar simulações por cpf
     Dado que tenha simulação cadastrada

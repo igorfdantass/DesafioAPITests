@@ -1,2 +1,97 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" time="0.092"/>
+<testsuite errors="0" failures="3" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="3" time="3.572">
+    <testcase classname="Validar gerenciamento de simulações de crédito" name="Inserir nova simulação válida" time="2.57">
+        <failure message="Cannot serialize object because no JSON serializer found in classpath. Please put either Jackson (Databind) or Gson in the classpath." type="java.lang.IllegalStateException">
+            <![CDATA[Dado que tenho os dados:....................................................passed
+* Nome: SimulacaoOK1........................................................passed
+* Cpf: 02676129074..........................................................passed
+* Email: SimulacaoOK1@email.com.............................................passed
+* Valor: 1000...............................................................passed
+* Parcelas: 2...............................................................passed
+* Seguro: true..............................................................passed
+Quando cadastro simulação...................................................failed
+Entao retorna status 201....................................................skipped
+E retorna id da simulação...................................................skipped
+
+StackTrace:
+java.lang.IllegalStateException: Cannot serialize object because no JSON serializer found in classpath. Please put either Jackson (Databind) or Gson in the classpath.
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:80)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:105)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:59)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:237)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:249)
+	at io.restassured.internal.mapping.ObjectMapping.serialize(ObjectMapping.groovy:149)
+	at io.restassured.internal.mapping.ObjectMapping$serialize.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:115)
+	at io.restassured.internal.RequestSpecificationImpl.body(RequestSpecificationImpl.groovy:750)
+	at dantas.igor.steps.SimulationsStepDefinitions.cadastroSimulação(SimulationsStepDefinitions.java:91)
+	at ✽.cadastro simulação(file:///C:/Users/igor.dantas/Cursos/DesafioTec/DesafioAPITests/src/test/resources/dantas/igor/features/simulacoes.feature:22)
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="Validar gerenciamento de simulações de crédito" name="Inserir nova simulação válida 2" time="0.136">
+        <failure message="Cannot serialize object because no JSON serializer found in classpath. Please put either Jackson (Databind) or Gson in the classpath." type="java.lang.IllegalStateException">
+            <![CDATA[Dado que tenho os dados:....................................................passed
+* Nome: SimulacaoOK2........................................................passed
+* Cpf: 17444393036..........................................................passed
+* Email: SimulacaoOK2@email.com.............................................passed
+* Valor: 5000...............................................................passed
+* Parcelas: 36..............................................................passed
+* Seguro: true..............................................................passed
+Quando cadastro simulação...................................................failed
+Entao retorna status 201....................................................skipped
+E retorna id da simulação...................................................skipped
+
+StackTrace:
+java.lang.IllegalStateException: Cannot serialize object because no JSON serializer found in classpath. Please put either Jackson (Databind) or Gson in the classpath.
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:80)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:105)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:249)
+	at io.restassured.internal.mapping.ObjectMapping.serialize(ObjectMapping.groovy:149)
+	at io.restassured.internal.mapping.ObjectMapping$serialize.call(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl.body(RequestSpecificationImpl.groovy:750)
+	at dantas.igor.steps.SimulationsStepDefinitions.cadastroSimulação(SimulationsStepDefinitions.java:91)
+	at ✽.cadastro simulação(file:///C:/Users/igor.dantas/Cursos/DesafioTec/DesafioAPITests/src/test/resources/dantas/igor/features/simulacoes.feature:22)
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="Validar gerenciamento de simulações de crédito" name="Inserir nova simulação válida 3" time="0.134">
+        <failure message="Cannot serialize object because no JSON serializer found in classpath. Please put either Jackson (Databind) or Gson in the classpath." type="java.lang.IllegalStateException">
+            <![CDATA[Dado que tenho os dados:....................................................passed
+* Nome: SimulacaoOK3........................................................passed
+* Cpf: 00812656032..........................................................passed
+* Email: SimulacaoOK3@email.com.............................................passed
+* Valor: 40000..............................................................passed
+* Parcelas: 48..............................................................passed
+* Seguro: true..............................................................passed
+Quando cadastro simulação...................................................failed
+Entao retorna status 201....................................................skipped
+E retorna id da simulação...................................................skipped
+
+StackTrace:
+java.lang.IllegalStateException: Cannot serialize object because no JSON serializer found in classpath. Please put either Jackson (Databind) or Gson in the classpath.
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:80)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:105)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:249)
+	at io.restassured.internal.mapping.ObjectMapping.serialize(ObjectMapping.groovy:149)
+	at io.restassured.internal.mapping.ObjectMapping$serialize.call(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl.body(RequestSpecificationImpl.groovy:750)
+	at dantas.igor.steps.SimulationsStepDefinitions.cadastroSimulação(SimulationsStepDefinitions.java:91)
+	at ✽.cadastro simulação(file:///C:/Users/igor.dantas/Cursos/DesafioTec/DesafioAPITests/src/test/resources/dantas/igor/features/simulacoes.feature:22)
+]]>
+        </failure>
+    </testcase>
+</testsuite>
